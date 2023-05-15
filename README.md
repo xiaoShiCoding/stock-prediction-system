@@ -4,7 +4,13 @@
   
   (1)cmd进入python-flack文件夹
   
-  (2)运行: pip install -r requirements.txt
+  (2)运行: 
+  ```bash
+  python -m venv ./venv
+  ```
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 2.front
 
@@ -12,10 +18,15 @@
 
 (2)cmd进入front文件夹
 
-(3)安装依赖：运行命令 npm i
+(3)安装依赖：运行命令 
+```bash
+npm i
+```
 
-(4)运行前端服务：npm run serve
-
+(4)运行前端服务：
+```bash
+npm run serve
+```
 3.back
 
 (1)安装redis
