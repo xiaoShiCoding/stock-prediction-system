@@ -61,8 +61,8 @@ public class StockMinuteDataController {
         if (originalFilename == null || !originalFilename.endsWith(".txt")) {
             return Result.error(null, "文件需要为txt文件");
         }
-        BufferedReader reader = new BufferedReader(new InputStreamReader(file.getInputStream(), "gbk"));
-        BufferedReader reader2 = new BufferedReader(new InputStreamReader(file.getInputStream(), "gbk"));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(file.getInputStream(), "utf-8"));
+        BufferedReader reader2 = new BufferedReader(new InputStreamReader(file.getInputStream(), "utf-8"));
         StringBuilder builder = new StringBuilder();
         String readLine;
         builder.append(reader2.readLine()).append("\n");
@@ -87,7 +87,7 @@ public class StockMinuteDataController {
         if (stockMinuteName == null) {
             stockMinuteName = new StockMinuteName();
             stockMinuteName.setStockId(stockId);
-            name = firstLine.substring(7, 12);
+            name = firstLine.split("\t")[1];
             if (name.endsWith("日")) {
                 name = name.replace("日", "");
             }
