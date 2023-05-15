@@ -85,7 +85,7 @@ public class StockDataController {
         if (stockName == null) {
             stockName = new StockName();
             stockName.setStockId(stockId);
-            name = firstLine.split("\t")[1]
+            name = firstLine.split("\t")[1];
             if (name.endsWith("日")) {
                 name = name.replace("日", "");
             }
